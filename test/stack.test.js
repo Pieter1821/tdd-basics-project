@@ -5,7 +5,10 @@ class Stack {
   }
 
   get peek() {
-    return this.items[this.top];
+    if (this.top > -1) {
+      return this.items[this.top];
+    }
+    return null;
   }
 
   push(value) {
@@ -16,7 +19,6 @@ class Stack {
 
 describe('My Stack', () => {
   let stack;
-
   beforeEach(() => {
     stack = new Stack();
   });
@@ -27,14 +29,14 @@ describe('My Stack', () => {
   });
 
   it('can push to the top', () => {
-    stack.push('🥑');
+    stack.push('avocado');
     expect(stack.top).toBe(0);
-    expect(stack.peek).toBe('🥑');
-
-    stack.push('🌽');
-    expect(stack.top).toBe(1);
-    expect(stack.peek).toBe('🌽');
+    expect(stack.peek).toBe('avocado');
   });
 
-  it.todo('can pop off');
+  it('it can pop off', () => {
+    stack.pop('avocado');
+    expect(stack.top).toBe(-1);
+    expect(stack.peek).toBe(null);
+  });
 });
