@@ -4,7 +4,7 @@ class Stack {
     this.items = {};
   }
 
-  // Changed the double curly braces to single curly braces
+  
   get peek() {
     if (this.top > -1) {
       return this.items[this.top];
@@ -17,7 +17,7 @@ class Stack {
     this.items[this.top] = value;
   }
 
-  // Added the pop method to remove the top element from the stack
+
   pop() {
     if (this.top > -1) {
       const value = this.items[this.top];

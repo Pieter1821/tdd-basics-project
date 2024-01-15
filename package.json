@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
-    "cypress": "^7.7.0",
+    "cypress": "^13.6.2",
     "jest": "^27.0.3",
     "vite": "^2.3.5"
   }
