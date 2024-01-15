@@ -15,6 +15,16 @@ class Stack {
     this.top += 1;
     this.items[this.top] = value;
   }
+
+  pop() {
+    if (this.top > -1) {
+      const value = this.items[this.top];
+      delete this.items[this.top];
+      this.top -= 1;
+      return value;
+    }
+    return null;
+  }
 }
 
 describe('My Stack', () => {
@@ -35,7 +45,9 @@ describe('My Stack', () => {
   });
 
   it('it can pop off', () => {
-    stack.pop('avocado');
+    stack.push('avocado');
+    const poppedValue = stack.pop();
+    expect(poppedValue).toBe('avocado');
     expect(stack.top).toBe(-1);
     expect(stack.peek).toBe(null);
   });
